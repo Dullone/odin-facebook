@@ -2,7 +2,7 @@
 
 A facebook like website.
 
-* Ruby version 2.2
+* Ruby version 2.2.1p85
 * Rails version 4.2.1
 
 

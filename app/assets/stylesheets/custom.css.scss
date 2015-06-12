@@ -6,10 +6,25 @@
   box-sizing:         border-box;
 }
 
+/* global links */
+a:link {
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
 .debug_dump {
   clear: both;
   float: left;
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+}
+
+/* posts */
+.post-author{
+  font-size: 10px;
+  color: #999999;
 }
