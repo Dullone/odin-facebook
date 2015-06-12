@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @posts = current_user.posts
+  end
+
   def show
   end
 
@@ -15,7 +19,7 @@ class PostsController < ApplicationController
     else
       flash[:alert] = "Post error: " + post.errors.full_messages.join(", ")
     end
-    redirect_to root_path
+    redirect_to posts_path
   end
 
   private

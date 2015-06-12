@@ -1,5 +1,5 @@
 <div class="post-container">
-  <%= post.text %>
+  <%= simple_format post.text, {}, wrapper_tag: "div"  %>
   <div class="post-details" >
     author: <%= link_to post.user.name, post.user %> 
     posted: <%= date_distance_in_words_if_less_than_day post.created_at %>

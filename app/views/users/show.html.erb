@@ -2,11 +2,13 @@
 
 <div class="profile">
   <ul>
-    <li class="profile-item"><span class="label">Name:</span> <%= @user.name %><br /></li>
-    <li class="profile-item"><span class="label">Email:</span> <%= @user.email %><br /></li>
-    <li class="profile-item"><span class="label">Location:</span> <%= @user.location %><br /></li>
-    <li class="profile-item"><span class="label">Job:</span> <%= @user.job %><br /></li>
-    <li class="profile-item"><span class="label">Interests:</span><br /></li>
-    <li class="profile-item"><span class="indent"><%= @user.interests %></span></li>
+    <li class="profile-item"><span class="label">Name:</span> <%= @user.name %></li>
+    <li class="profile-item"><span class="label">Email:</span> <%= @user.email %></li>
+    <li class="profile-item"><span class="label">Location:</span> <%= @user.location %></li>
+    <li class="profile-item"><span class="label">Job:</span> <%= @user.job %></li>
+    <li class="profile-item"><span class="label">Interests:</span></li>
+    <li class="profile-item">
+      <%= simple_format @user.interests,{}, wrapper_tag: "div class='indent'" %>
+    </li>
   </ul>
 </div>

@@ -1,2 +1,15 @@
-<%= render partial: '/posts/post_form', locals: { post: Post.new } %>
-<%= render @user.posts %>
+<h2>All signed up people</h2>
+
+<div class="users-container">
+  <% @users.each do |user| %>
+    <div class="user">
+      <%= link_to user.name, user %>
+      <% unless user == current_user || current_user.friends.include?(user) %>
+        <%= form_for FriendLink.new do |f| %>
+          <%= hidden_field_tag 'friend_link[friend_id]', user.id %>
+          <%= f.submit "friend request" %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
