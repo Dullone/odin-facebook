@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   def create
     post = current_user.posts.build(post_params)
     if post.save
+      flash[:notice] = "Post success!"
     else
       flash[:alert] = "Post error: " + post.errors.full_messages.join(", ")
     end

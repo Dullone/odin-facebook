@@ -1,0 +1,7 @@
+<div class="header">
+  <%= current_user.name %>
+  <%= link_to "My profile", current_user %>
+  <% if current_user %>
+    <span class="right"><%= link_to "logout", destroy_user_session_path, method: :delete %></span>
+  <% end %>
+</div>

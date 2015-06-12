@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  email: MyString
-  job: MyString
+  name: Ruby
+  email: r@ex.com
+  job:Du du
   interests: MyText
 
 two:
-  name: MyString
-  email: MyString
+  name: No Ruby
+  email: nr@ex.com
   job: MyString
   interests: MyText

@@ -1,0 +1,12 @@
+<h2>Pofile for: <%= @user.name %></h2>
+
+<div class="profile">
+  <ul>
+    <li class="profile-item"><span class="label">Name:</span> <%= @user.name %><br /></li>
+    <li class="profile-item"><span class="label">Email:</span> <%= @user.email %><br /></li>
+    <li class="profile-item"><span class="label">Location:</span> <%= @user.location %><br /></li>
+    <li class="profile-item"><span class="label">Job:</span> <%= @user.job %><br /></li>
+    <li class="profile-item"><span class="label">Interests:</span><br /></li>
+    <li class="profile-item"><span class="indent"><%= @user.interests %></span></li>
+  </ul>
+</div>
