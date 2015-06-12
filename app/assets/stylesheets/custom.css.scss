@@ -15,6 +15,7 @@ a:hover{
   text-decoration: underline;
 }
 
+
 .debug_dump {
   clear: both;
   float: left;
@@ -27,4 +28,17 @@ a:hover{
 .post-details{
   font-size: 10px;
   color: #999999;
+}
+
+.post-container, .new-post-container{
+  width: 500px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 4px;
+}
+
+.post-container{
+  background: linear-gradient(to right, #EBF0FF, #FFFFFF);
 }

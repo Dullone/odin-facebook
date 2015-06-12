@@ -9,13 +9,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    if @post = current_user.posts.create(post_params)
-      flash[:notice] = "Post created!"
-      redirect_to root_path
+    post = current_user.posts.build(post_params)
+    if post.save
     else
-      render :new
+      flash[:alert] = "Post error: " + post.errors.full_messages.join(", ")
     end
-
+    redirect_to root_path
   end
 
   private
