@@ -1,4 +1,8 @@
 <div class="post-container">
   <%= post.text %>
-  <div class="post-author" >author: <%= link_to post.user.name, post.user %> </div>
+  <div class="post-details" >
+    author: <%= link_to post.user.name, post.user %> 
+    posted: <%= date_distance_in_words_if_less_than_day post.created_at %>
+  </div>
+
 </div>
