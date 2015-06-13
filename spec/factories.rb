@@ -13,4 +13,6 @@ FactoryGirl.define do
   factory :post do 
     text "Post of text here."
   end
+  factory :friend_link do 
+  end
 end
