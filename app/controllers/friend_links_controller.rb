@@ -15,4 +15,12 @@ class FriendLinksController < ApplicationController
   def index
     @friend_links = unaswered_friend_requests
   end
+
+  def destroy
+    @friend_link = FriendLink.find(params[:id])
+    if @friend_link.user == current_user
+      @friend_link.destroy
+    end
+    render :index
+  end
 end
