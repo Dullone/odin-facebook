@@ -7,5 +7,8 @@
   </div>
     <% unless post.user_likes.include?(current_user) %>
       <%= render partial: "/likes/like_form", locals: { post: post }  %>
+    <% else %>
+      <%= render :partial => "/likes/unlike_form", 
+                  locals: { like: current_user.likes.find_by_post_id(post.id) } %>
     <% end %>
 </div>
