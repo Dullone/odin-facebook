@@ -1,0 +1,11 @@
+<div class="likes">
+  <% if likes.count <= 3 %> 
+    Liked by:
+    <%= (likes.inject([]) { |array, like| 
+      array << link_to(like.user.name, like.user) }
+      ).join(", ").html_safe  %>
+
+  <% else %>
+    <%=  likes.count %> likes
+  <% end %>
+</div>

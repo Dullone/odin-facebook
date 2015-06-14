@@ -1,0 +1,6 @@
+<div class="like-post">
+  <%= form_for Like.new do |f| %>
+    <%= hidden_field_tag 'like[post_id]', post.id %>
+    <%= f.submit "Like this" %>
+  <% end %>
+</div>
