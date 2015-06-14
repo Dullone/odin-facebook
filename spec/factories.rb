@@ -1,4 +1,5 @@
 FactoryGirl.define do  
+  
   factory :user do
     sequence :email do |n|
       "person#{n}@example.com"
@@ -11,8 +12,11 @@ FactoryGirl.define do
   end
 
   factory :post do 
-    text "Post of text here."
+    sequence :post do |n|
+      text "Post of #{n} text here."
+    end
   end
+
   factory :friend_link do 
   end
 end
