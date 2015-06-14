@@ -4,6 +4,12 @@
     <%= link_to "My profile", current_user %> |
     <%= link_to "Posts", posts_path %> |
     <%= link_to "People", users_path %>
+    <% if unaswered_friend_requests? %>
+      <span class="notification">
+       | <%= link_to "#{pluralize(unaswered_friend_requests.count, 'friend request')}",
+                                                         friend_links_path %>
+      </span>
+    <% end %>
   <% end %>
 
   <% if user_signed_in? %>

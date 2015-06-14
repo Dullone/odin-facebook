@@ -1,5 +1,6 @@
 class FriendLinksController < ApplicationController
   before_action :authenticate_user!
+  include FriendLinksHelper
 
   def create
     friend_id = (params[:friend_link][:friend_id]).to_i
@@ -11,4 +12,7 @@ class FriendLinksController < ApplicationController
     end
   end
 
+  def index
+    @friend_links = unaswered_friend_requests
+  end
 end
