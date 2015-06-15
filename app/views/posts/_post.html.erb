@@ -11,4 +11,9 @@
       <%= render :partial => "/likes/unlike_form", 
                   locals: { like: current_user.likes.find_by_post_id(post.id) } %>
     <% end %>
+    <div class="comments indent">
+      <div class="title">comments:</div>
+      <%= button_to "add comment", new_post_comment_path(post), method: :get %>
+      <%= render post.comments %>
+    </div>
 </div>

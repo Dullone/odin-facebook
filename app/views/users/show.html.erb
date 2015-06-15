@@ -12,3 +12,7 @@
     </li>
   </ul>
 </div>
+
+<h3>My posts</h3>
+<%= render partial: '/posts/post_form', locals: { post: Post.new } %>
+<%= render @user.posts %>

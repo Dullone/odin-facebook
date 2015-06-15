@@ -1,4 +1,9 @@
-FactoryGirl.define do  
+FactoryGirl.define do  factory :comment do
+    user nil
+post nil
+text "MyText"
+  end
+  
 
   factory :like do  
   end

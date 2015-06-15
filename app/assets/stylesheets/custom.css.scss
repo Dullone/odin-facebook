@@ -6,6 +6,10 @@
   box-sizing:         border-box;
 }
 
+@mixin padding5{
+  padding: 5px;
+}
+
 body{
   background: #fff;
   margin: 0px;
@@ -26,6 +30,7 @@ a:hover{
 
 .right{
   float: right;
+  padding-right: 10px;
 }
 
 .indent{
@@ -34,6 +39,7 @@ a:hover{
 }
 
 .content-container{
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
   width: 70%
@@ -48,15 +54,26 @@ a:hover{
 }
 /* header */
 .header{
+  position: fixed;
+  height: 30px;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding-top: 10px;
+  padding-left: 5px;
+  /*
   width: 520px 100%;
   margin-top: 0px;
-  padding: 7px 10px 7px 10px;
+  padding: 7px 10px 7px 10px; */
   background: #f0f0f0;
 }
 
 /* profile */
 .profile{
+  padding-top: 1px;
+  padding-bottom: 1px;
   width: 500px;
+  border-radius: 3px;
 }
 
 .profile .label{
@@ -98,7 +115,7 @@ a:hover{
 }
 
 /* posts */
-.post-details{
+.post-details, .comment-details{
   font-size: 10px;
   color: #999999;
 }
@@ -107,9 +124,12 @@ a:hover{
   width: 500px;
   margin-top: 5px;
   margin-bottom: 5px;
-  margin-left: 10px;
+  margin-left: 0px;
   margin-right: 10px;
-  padding: 4px;
+  padding: 5px;
+  padding-left: 18px;
+  padding-bottom: 10px;
+  border-radius: 6px;
 }
 
 .post-container, .profile{
@@ -121,7 +141,8 @@ a:hover{
   display: inline; 
 }
 
-.new_friend_link input[type="submit"], .friend_link input[type="submit"] {
+.new_friend_link input[type="submit"], 
+.friend_link input[type="submit"]{
   background: #9cd7ff;
   -webkit-border-radius: 5;
   -moz-border-radius: 5;
@@ -142,7 +163,10 @@ a:hover{
 }
 
 /* Likes */
-.like-post input[type="submit"],.unlike-post input[type="submit"]{
+input[type="submit"],,
+.like-post input[type="submit"],
+.unlike-post input[type="submit"],
+.new-post-container input[type="submit"]{
   background: #3498db;
   -webkit-border-radius: 5;
   -moz-border-radius: 5;
@@ -155,6 +179,10 @@ a:hover{
   border: none;
 }
 
+input[type="submit"]:hover{
+  background: #71B7E6;
+}
+
 .unlike-post input[type="submit"]{
   background: #8F0000;
 }
@@ -165,4 +193,20 @@ a:hover{
 
 .unlike-post input[type="submit"]:hover {
   background: #ff0000;
+}
+
+/* Comments */
+.comments{
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+.comment-container{
+  padding-top: 5px;
+  padding-bottom: 3px;
+}
+
+.comments .title{
+  font-weight: bold;
+  padding-bottom: 2px;
 }
