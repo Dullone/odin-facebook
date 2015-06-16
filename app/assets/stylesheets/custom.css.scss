@@ -39,7 +39,7 @@ a:hover{
 }
 
 .content-container{
-  margin-top: 50px;
+  margin-top: 80px;
   margin-left: auto;
   margin-right: auto;
   width: 70%
@@ -134,6 +134,11 @@ a:hover{
 
 .post-container, .profile{
   background: linear-gradient(to right, #EBF0FF, #FFFFFF);
+}
+
+.new-post-container textarea{
+  width: 400px;
+  height: 100px;
 }
 
 /* friend links */

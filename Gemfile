@@ -50,6 +50,7 @@ group :development, :test do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'factory_girl_rails', '~> 4.0'
+  gem "letter_opener"
 end
 
 group :test do 

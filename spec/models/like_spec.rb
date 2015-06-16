@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  let(:user){ FactoryGirl.create(:user) }
+  let(:user) { FactoryGirl.create(:user) }
   let(:post) { Post.create(text: "Post body", user: user) }
   let(:like) { Like.create(user: user, post: post) }
 

@@ -10,10 +10,10 @@ class UserPagesTest < ActionDispatch::IntegrationTest
     assert_redirected_to '/users/sign_in'
   end
 
-  test "new post shows up on homepage" do
+  test "profile page has new post form" do
     post_via_redirect 'users/sign_in', 'user[email]' => 'Ruby',
                                      'user[password]' => 'password'
-    get root_path
+    get user_path
     assert_select 'new_post', 1
   end
 end

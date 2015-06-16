@@ -8,6 +8,8 @@ class CommentsController < ApplicationController
     if @post
       @post.comments.create(text: params[:comment][:text], user: current_user)
     end
+    
     redirect_to posts_path
   end
+
 end

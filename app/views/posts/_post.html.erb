@@ -1,19 +1,24 @@
 <div class="post-container">
+  
   <%= simple_format post.text, {}, wrapper_tag: "div"  %>
+  
   <div class="post-details" >
     author: <%= link_to post.user.name, post.user %> 
     posted: <%= date_distance_in_words_if_less_than_day post.created_at %>
     <%= render partial: "/likes/likes", locals: { likes: post.likes  } %> 
   </div>
+
     <% unless post.user_likes.include?(current_user) %>
       <%= render partial: "/likes/like_form", locals: { post: post }  %>
     <% else %>
       <%= render :partial => "/likes/unlike_form", 
                   locals: { like: current_user.likes.find_by_post_id(post.id) } %>
     <% end %>
+
     <div class="comments indent">
       <div class="title">comments:</div>
       <%= button_to "add comment", new_post_comment_path(post), method: :get %>
       <%= render post.comments %>
     </div>
+
 </div>
