@@ -1,4 +1,11 @@
-<div class="friend-links">
-  <h2>Friend requests</h2>
-  <%= render @friend_links %>
+<% if @friend_links.count > 0 %>
+  <div class="friend-links">
+    <h2>Friend requests</h2>
+    <%= render @friend_links %>
+  </div>
+<% end %>
+
+<div class="friends">
+  <h2>Friends</h2>
+  <%= render @friends %>
 </div>

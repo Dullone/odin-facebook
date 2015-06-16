@@ -45,11 +45,11 @@ a:hover{
   width: 70%
 }
 
-.notification a, .friend_link a{
+.notification a, .friend_link .decline a{
   color: #B20000;
 }
 
-.friend_link a{
+.friend_link .decline a{
   font-size: 11px;
 }
 /* header */

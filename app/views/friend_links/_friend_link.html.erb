@@ -1,7 +1,9 @@
 <div class="friend_link">
-  <%= friend_link.user.name %>
-  <%= form_for friend_link do |f| %>
-    <%= f.submit "Accept" %>
+  <%= link_to friend_link.user.name, friend_link.user %>
+  <% if friend_link.status == "pending" %>
+    <%= form_for friend_link do |f| %>
+      <%= f.submit "Accept" %>
+    <% end %>
+    <span class="decline"><%= link_to("decline", friend_link, method: :delete) %></span>
   <% end %>
-  <%= link_to("decline", friend_link, method: :delete) %>
 </div>

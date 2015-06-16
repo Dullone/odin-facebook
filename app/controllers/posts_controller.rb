@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  include PostsHelper
 
   def index
-    @posts = current_user.posts
+    @posts = feed
   end
 
   def show

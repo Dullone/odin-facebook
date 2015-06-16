@@ -12,8 +12,15 @@ class FriendLinksController < ApplicationController
     end
   end
 
+  def update
+    @friend_link = FriendLink.find(params[:id])
+    @friend_link.update_attributes(status: 'accepted')
+    redirect_to friend_links_path
+  end
+
   def index
     @friend_links = unaswered_friend_requests
+    @friends = friends_list
   end
 
   def destroy
