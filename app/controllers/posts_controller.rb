@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   include PostsHelper
 
   def index
-    @posts = feed
+    @posts = feed(current_user)
   end
 
   def show

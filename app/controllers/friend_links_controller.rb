@@ -20,7 +20,7 @@ class FriendLinksController < ApplicationController
 
   def index
     @friend_links = unaswered_friend_requests
-    @friends = friends_list
+    @friends = current_user.friended
   end
 
   def destroy
