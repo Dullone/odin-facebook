@@ -1,5 +1,5 @@
 <div class="friend_link">
-  <%= link_to friend_link.user.name, friend_link.user %>
+  <%= link_to friend_link.requester.name, friend_link.requester %>
   <% if friend_link.status == "pending" %>
     <%= form_for friend_link do |f| %>
       <%= f.submit "Accept" %>

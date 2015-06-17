@@ -1,6 +1,6 @@
 class FriendLink < ActiveRecord::Base
-  belongs_to :requester, class_name: 'User', foreign_key: 'requester_id'
   belongs_to :requested, class_name: 'User', foreign_key: 'requested_id'
+  belongs_to :requester, class_name: 'User', foreign_key: 'requester_id'
   validates :requester_id,   presence: true
   validates :requested_id, presence: true
   validates_inclusion_of :status, :in => %w(pending rejected accepted)

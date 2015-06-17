@@ -5,7 +5,8 @@
     <div class="user">
       <%= link_to user.name, user %>
 
-      <% unless user == current_user || current_user.friended.include?(user) %>
+      <% unless user == current_user || pending_friend_requests?(user.id) ||
+                                        current_user.friends.include?(user) %>
 
         <%= form_for FriendLink.new do |f| %>
         
