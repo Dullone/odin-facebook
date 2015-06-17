@@ -28,16 +28,16 @@ ActiveRecord::Schema.define(version: 20150614234418) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "friend_links", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "friend_id"
+    t.integer  "requester_id"
+    t.integer  "requested_id"
     t.string   "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
-  add_index "friend_links", ["friend_id"], name: "index_friend_links_on_friend_id", using: :btree
-  add_index "friend_links", ["user_id", "friend_id"], name: "index_friend_links_on_user_id_and_friend_id", unique: true, using: :btree
-  add_index "friend_links", ["user_id"], name: "index_friend_links_on_user_id", using: :btree
+  add_index "friend_links", ["requested_id"], name: "index_friend_links_on_requested_id", using: :btree
+  add_index "friend_links", ["requester_id", "requested_id"], name: "index_friend_links_on_requester_id_and_requested_id", unique: true, using: :btree
+  add_index "friend_links", ["requester_id"], name: "index_friend_links_on_requester_id", using: :btree
 
   create_table "likes", force: :cascade do |t|
     t.integer  "user_id"

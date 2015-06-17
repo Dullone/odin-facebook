@@ -16,21 +16,21 @@ RSpec.describe User, type: :model do
     expect(user.posts).to_not include(post2)
   end
 
- describe "friended" do
+ describe "friends" do
 
     it "can have friends from requesting" do 
-      FriendLink.create(friend: user2, user: user, status: "accepted")
-      expect(user.friended).to include(user2)
+      FriendLink.create(requested_id: user2.id, requester_id: user.id, status: "accepted")
+      expect(user.friends).to include(user2)
     end
 
     it "can have friends from  accepting" do 
-      FriendLink.create(friend: user, user: user2, status: "accepted")
-      expect(user.friended).to include(user2)
+      FriendLink.create(requested_id: user.id, requester_id: user2.id, status: "accepted")
+      expect(user.friends).to include(user2)
     end
 
     it "doesn't include pending friend_links" do 
-      FriendLink.create(friend: user3, user: user, status: "pending")
-      expect(user.friended).to_not include(user3)
+      FriendLink.create(requested_id: user3.id, requester_id: user.id, status: "pending")
+      expect(user.friends).to_not include(user3)
     end
   end
 
