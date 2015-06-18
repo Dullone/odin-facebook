@@ -52,6 +52,14 @@ a:hover{
 .friend_link .decline a{
   font-size: 11px;
 }
+
+.error-message{
+  color: red;
+}
+.field_with_errors input{
+  outline: none !important;
+  border:1px solid red;
+}
 /* header */
 .header{
   position: fixed;

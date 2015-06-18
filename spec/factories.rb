@@ -1,14 +1,17 @@
-FactoryGirl.define do  factory :comment do
+FactoryGirl.define do 
+
+  factory :comment do
     user nil
-post nil
-text "MyText"
+    post nil
+
+    text "MyText"
   end
   
 
   factory :like do  
   end
-  
-  
+
+
   factory :user do
     sequence :email do |n|
       "person#{n}@example.com"
@@ -21,8 +24,8 @@ text "MyText"
   end
 
   factory :post do 
-    sequence :post do |n|
-      text "Post of #{n} text here."
+    sequence :text do |n|
+      "Post of #{n} text here."
     end
   end
 

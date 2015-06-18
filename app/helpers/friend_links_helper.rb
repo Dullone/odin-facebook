@@ -13,4 +13,8 @@ module FriendLinksHelper
     FriendLink.where("status = ? AND (requested_id = ? OR requester_id = ? )", 
                                         "pending", user_id, user_id).count > 0
   end
+  def pending_friend_requests(user_id)
+    FriendLink.where("status = ? AND (requested_id = ? OR requester_id = ? )", 
+                                        "pending", user_id, user_id)
+  end
 end

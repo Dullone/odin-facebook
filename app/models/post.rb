@@ -2,6 +2,7 @@ class Post < ActiveRecord::Base
   default_scope { order(created_at: :desc) }
 
   validates :text, presence: true, length: { maximum: 5000 }
+  validates :user, presence: true
 
   belongs_to :user
   has_many :comments

@@ -13,6 +13,9 @@
     </li>
   </ul>
 </div>
+<% if @user == current_user  %>
+  <%= link_to("edit profile", edit_user_path(@user)) %>
+<% end %>
 
 <h3>My posts</h3>
 <%= render partial: '/posts/post_form', locals: { post: Post.new } %>
