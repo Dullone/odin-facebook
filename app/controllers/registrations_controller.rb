@@ -1,8 +1,8 @@
 class RegistrationsController < Devise::RegistrationsController
 
   def create
-    UserMailer.welcome_mail(params[:user][:name],
-                            params[:user][:email]).deliver_later
+    #UserMailer.welcome_mail(params[:user][:name],
+    #                        params[:user][:email]).deliver_later
     super
   end
   private
