@@ -1,6 +1,7 @@
 <h2>Pofile for: <%= @user.name %></h2>
 
 <div class="profile">
+  <%= gravatar_for @user, size: 100 %>
   <ul>
     <li class="profile-item"><span class="label">Name:</span> <%= @user.name %></li>
     <li class="profile-item"><span class="label">Email:</span> <%= @user.email %></li>
@@ -15,4 +16,5 @@
 
 <h3>My posts</h3>
 <%= render partial: '/posts/post_form', locals: { post: Post.new } %>
-<%= render @user.posts %>
+<%= render @posts %>
+<%= will_paginate @posts %>

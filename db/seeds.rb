@@ -33,3 +33,8 @@ user3 = User.create(
     job: "Fletcher",
     interests: "Making arrows\nFlying kites\nBasketball"
   )
+
+40.times do
+    text = Faker::Lorem.sentence(3)
+    user1.posts.create!(text: text)
+end

@@ -3,6 +3,7 @@
   <%= simple_format post.text, {}, wrapper_tag: "div"  %>
   
   <div class="post-details" >
+    <%= gravatar_for post.user, size: 20 %>
     author: <%= link_to post.user.name, post.user %> 
     posted: <%= date_distance_in_words_if_less_than_day post.created_at %>
     <%= render partial: "/likes/likes", locals: { likes: post.likes  } %> 

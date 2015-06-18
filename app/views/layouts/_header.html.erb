@@ -1,9 +1,13 @@
 <div class="header">
   <% if user_signed_in? %>
+    <div class="gravatar">
+      <%= gravatar_for current_user, size: 35  %>
+    </div>
     <%= current_user.name %> |
     <%= link_to "My profile", current_user %> |
     <%= link_to "Posts", posts_path %> |
-    <%= link_to "People", users_path %>
+    <%= link_to "People", users_path %> |
+    <%= link_to "Friends", friend_links_path %>
     <% if unaswered_friend_requests? %>
       <span class="notification">
        | <%= link_to "#{pluralize(unaswered_friend_requests.count, 'friend request')}",
@@ -13,8 +17,10 @@
   <% end %>
 
   <% if user_signed_in? %>
-    <span class="right"><%= link_to "logout", destroy_user_session_path, method: :delete %></span>
+    <span class="right"><%= link_to "logout", destroy_user_session_path, 
+                                              method: :delete %></span>
   <% else %>
-    <span class="right"><%= link_to "login", new_user_session_path, method: :delete %></span>
+    <span class="right"><%= link_to "login", new_user_session_path, 
+                                          method: :delete %></span>
   <% end %>
 </div>

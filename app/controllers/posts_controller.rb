@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   include PostsHelper
 
   def index
-    @posts = feed(current_user)
+    @posts = feed(current_user).paginate(:page => params[:page], :per_page => 30)
   end
 
   def show

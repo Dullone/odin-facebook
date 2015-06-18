@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   end
   resources :friend_links, only: [:new, :create, :destroy, :index, :update]
   resources :likes, only: [:create, :destroy]
+  get 'help' => 'static_pages#help'
 end

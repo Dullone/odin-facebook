@@ -11,4 +11,8 @@ RSpec.describe CommentsHelper, type: :helper do
     expect(feed(user)).to include(post2)
     expect(feed(user2)).to include(post1)
   end
+
+  it "doesn't show non-friends posts" do 
+    expect(feed(user)).to_not include(post2)
+  end
 end
